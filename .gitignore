@@ -2,3 +2,4 @@
 /ffmpeg*.js
 /ffmpeg*.wasm
 /test/out*
+dist

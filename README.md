@@ -192,3 +192,12 @@ Included libraries:
 * LAME [licensed under LGPL](https://github.com/rbrito/lame/blob/origin/COPYING).
 
 See [LICENSE.MP4](https://github.com/Kagami/ffmpeg.js/blob/master/LICENSE.MP4) for the full text of software licenses used in this build.
+
+
+
+```
+rm -rf build
+git submodule update --init --recursive
+docker run --rm -it -v /path/to/github/ffmpeg.js:/mnt -w /opt kagamihi/ffmpeg.js
+cp -a /mnt/{.git,build,Makefile} . && source /root/emsdk/emsdk_env.sh && make && cp ffmpeg*.js /mnt
+```

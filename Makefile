@@ -7,19 +7,18 @@ POST_JS_SYNC = build/post-sync.js
 POST_JS_WORKER = build/post-worker.js
 
 COMMON_FILTERS = aresample scale crop overlay hstack vstack
-COMMON_DEMUXERS = matroska ogg mov mp3 wav image2 concat
-COMMON_DECODERS = vp8 h264 vorbis opus mp3 aac pcm_s16le mjpeg png
+COMMON_DEMUXERS = wav ogg webm
+COMMON_DECODERS = libopus pcm_s16le
 
-WEBM_MUXERS = webm ogg null
-WEBM_ENCODERS = libvpx_vp8 libopus
+WEBM_MUXERS = webm ogg wav
+WEBM_ENCODERS = libopus pcm_s16le
 FFMPEG_WEBM_BC = build/ffmpeg-webm/ffmpeg.bc
 FFMPEG_WEBM_PC_PATH = ../opus/dist/lib/pkgconfig
 WEBM_SHARED_DEPS = \
-	build/opus/dist/lib/libopus.so \
-	build/libvpx/dist/lib/libvpx.so
+	build/opus/dist/lib/libopus.so
 
-MP4_MUXERS = mp4 mp3 null
-MP4_ENCODERS = libx264 libmp3lame aac
+MP4_MUXERS = mp4
+MP4_ENCODERS = aac
 FFMPEG_MP4_BC = build/ffmpeg-mp4/ffmpeg.bc
 FFMPEG_MP4_PC_PATH = ../x264/dist/lib/pkgconfig
 MP4_SHARED_DEPS = \
